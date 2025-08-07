@@ -32,6 +32,7 @@ public class App {
                 if(targetNo == -1) continue;
                 wiseSaying = findWiseSayingByNumber(targetNo);
                 setWiseSayingEditer();
+                buildJsonFile();
             }
             if(command.equals("빌드")){
                 buildJsonFile();
@@ -102,7 +103,8 @@ public class App {
 
             FileOutputStream fos = new FileOutputStream(json);
 
-            String writeString = "{\n" +
+            String writeString =
+                    "{\n" +
                     "\t\"id\": " + wiseSaying.getNum() + ",\n" +
                     "\t\"content\": " + wiseSaying.getContent() + ",\n" +
                     "\t\"author\": "+ wiseSaying.getAuthor() + "\n" +
